@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css">
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>petMATCH</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.js">
+	</script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script>
+	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js">
+	</script>
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="logic.js">
+	</script>
 </head>
 <body>
+	<div class="page-header">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="index.html">Home</a>
+					</li>
+					<li class="active">
+						<a class="link" href="" id='loginForm'>Login</a>
+					</li>
+					<li class="active">
+						<a class="link" href="" id='signUpForm'>Sign Up</a>
+					</li>
+					<li class="active">
+						<a class="hidden" href="" id="logOut">Log Out</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
+	<div class="jumbotron">
+		<div class="row">
+			<div class="hidden petName">
+				<h1 id="name">WOOFY</h1>
+			</div>
+		</div>
+		<form class="hidden" id='logUser' name="logUser">
+			<label></label>
+			<h2><label>Email</label></h2><br>
+			<input class="input" id='emailInput' type='text'><br>
+			<br>
+			<label></label>
+			<h2><label>Password</label></h2><br>
+			<input class="input" id='passwordInput' type='text'><br>
+			<br>
+			<button id='signUp' type='text'>SIGN UP</button> <button id='login' type='text'>LOG IN</button>
+		</form>
+		<div class="display" id="loggedOutDisplay">
+			<img class="logged-out-img img" src="loggedOutImg.JPG">
+		</div>
+		<div class="hidden" id="loggedInDisplay">
+			<div class="row">
+				<div class="column column-2">
+					<div id="menu-left">
+
+						<span class="glyphicon glyphicon-arrow-left"></span>
+					</div>
+				</div>
+				<div class="column column-6">
+
+					<img class="logged-in-img img" src="loggedInImg.JPG">
+				</div>
+				<div class="column column-2">
+					<div id="menu-right">
+						<span class="glyphicon glyphicon-arrow-right"></span>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
 </body>
 </html>
