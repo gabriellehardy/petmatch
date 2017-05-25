@@ -16,6 +16,9 @@ button{
 	border:2px solid black;
 	text-align: center;
 }
+.btn{
+	border:none;
+}
 .img{
 	width:100%;
 }

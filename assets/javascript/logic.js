@@ -2,14 +2,7 @@ $(document).ready(function() {
   $(".navbar-toggle").on("click", function () {
     $(this).toggleClass("active");
   });
-var apiKey = "cb6a30e95d827e83a94394acaee07397";
-var queryURL = ""
-  $.ajax({
-    url: "",
-    method: "GET"
-  }).done(function(response){
-    console.log(response)
-  })
+
 //initialize firebase
   var config = {
     apiKey: "AIzaSyB8dlnUx6FvgQebpp-Whw2t1aI-UyD1_X4",
@@ -87,9 +80,10 @@ var queryURL = ""
         $("form").hide();
         $("#loggedOutDisplay").hide();
         $("#loggedInDisplay").removeClass("hidden");
-        $("#loggedInDisplay").addClass("display")
+        $("#loggedInDisplay").addClass("display");
         $(".petName").removeClass("hidden");
         $("#logOut").removeClass("hidden");
+        $("#search").removeClass("hidden");
 
       }else{
         console.log("not logged in")
@@ -110,6 +104,15 @@ connectedRef.on("value", function(snap) {
   }
 });
 
+  var apiKey = "cb6a30e95d827e83a94394acaee07397"
+
+$.getJSON('http://api.petfinder.com/pet.find?&animal=dog&location=78734&age=adult&size=S&format=json&key='+apiKey+'&callback=?')
+  .done(function(response) {
+   var pets = response.petfinder.pets;
+   console.log(pets)
+
+  }).error(function(err) { alert('Error retrieving data!'); 
+});
 
 
 });

@@ -2,50 +2,77 @@
 <html>
 <head>
 	<title>petMATCH</title>
+	<!---links jquery-->
 	<script src="https://code.jquery.com/jquery-3.2.1.js">
 	</script>
+	<!--links bootstrap css-->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+	<!--links animate.css-->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<!--links bootstrap js-->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	</script>
+	<!--links firebase-->
 	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js">
 	</script>
-	<link href="style.css" rel="stylesheet" type="text/css">
-	<script src="logic.js">
+	<!--links css-->
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+	<!--links javascript-->
+	<script src="assets/javascript/logic.js">
 	</script>
 </head>
 <body>
+	<!--header div-->
 	<div class="page-header">
+		<!--navbar div-->
 		<div class="navbar navbar-inverse navbar-fixed-top">
+			<!--sets hamburger btn toggle-->
 			<div class="navbar-header">
 				<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
 			</div>
+			<!--collapsable nav links-->
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li class="active">
 						<a href="index.html">Home</a>
 					</li>
 					<li class="active">
-						<a class="link" href="" id='loginForm'>Login</a>
+						<a href="#" data-toggle="modal" data-target="#searchPets">
+							Search Pets
+						</a>
+					</li>				
+					<li class="active">
+						<a class="link" href="" id='loginForm'>
+							Login
+						</a>
 					</li>
 					<li class="active">
-						<a class="link" href="" id='signUpForm'>Sign Up</a>
+						<a class="link" href="" id='signUpForm'>
+							Sign Up
+						</a>
 					</li>
 					<li class="active">
-						<a class="hidden" href="" id="logOut">Log Out</a>
+						<a class="hidden" href="" id="logOut">
+							Log Out
+						</a>
 					</li>
 				</ul>
-			</div>
+			</div>		
 		</div>
+		<!--end of header-->
 	</div>
-
+	<!--main content-->
 	<div class="jumbotron">
+		<!--pet name row-->
 		<div class="row">
+
 			<div class="hidden petName">
+		<!--insert value of pet name here #name-->
 				<h1 id="name">WOOFY</h1>
 			</div>
 		</div>
+		<!--login/sign up form-->
 		<form class="hidden" id='logUser' name="logUser">
 			<label></label>
 			<h2><label>Email</label></h2><br>
@@ -57,30 +84,66 @@
 			<br>
 			<button id='signUp' type='text'>SIGN UP</button> <button id='login' type='text'>LOG IN</button>
 		</form>
+		<!--active div when a user is not logged in-->
 		<div class="display" id="loggedOutDisplay">
-			<img class="logged-out-img img" src="loggedOutImg.JPG">
+			<img class="logged-out-img img" src="assets/images/loggedOutImg.JPG">
 		</div>
+		<!--active div when a user is logged in (main pet div)-->
 		<div class="hidden" id="loggedInDisplay">
 			<div class="row">
 				<div class="column column-2">
 					<div id="menu-left">
-
+					<!--slide pet left arrow-->
 						<span class="glyphicon glyphicon-arrow-left"></span>
 					</div>
 				</div>
+				<!--holds all current pet info-->
 				<div class="column column-6">
-
-					<img class="logged-in-img img" src="loggedInImg.JPG">
+					<!--current pet img-->
+					<img class="logged-in-img img" src="assets/images/loggedInImg.JPG">
 				</div>
 				<div class="column column-2">
 					<div id="menu-right">
+					<!--slide pet right arrow-->
 						<span class="glyphicon glyphicon-arrow-right"></span>
-
 					</div>
 				</div>
 			</div>
-
 		</div>
+		<!--end of (main pet div)-->
+		<!--modal-->
+		<div class="modal fade" id="searchPets" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+		  <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title" id="myModalLabel">Search Pets</h4>
+		      </div>
+		      <div class="modal-body">
+		        <label>Zipcode</label>
+		        <input type="text" name="zipcode">
+		        <br><br>
+		        <label>Animal</label>
+		        Dog:<input type="radio" name="dog">
+		        Cat:<input type="radio" name="cat">
+		        <br><br>
+		        <label>Age</label>
+		        Adult:<input type="radio" name="adult">
+		        Senior:<input type="radio" name="senior">
+		        <br><br>
+		        <label>Size</label>
+		        Small:<input type="radio" name="S">
+		        Medium:<input type="radio" name="M">
+		        Large:<input type="radio" name="L">
+
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>		
 	</div>
 </body>
 </html>
