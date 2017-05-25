@@ -1,0 +1,79 @@
+body{
+	background-color: #7a7a7a;
+}
+button{
+	background-color: blue;
+	color:white;
+	border:none;
+}
+#name{
+	text-align: center
+}
+
+.display{
+	width:75%;
+	margin-left: 12.5%;
+	border:2px solid black;
+	text-align: center;
+}
+.btn{
+	border:none;
+}
+.img{
+	width:100%;
+}
+.loggedInImg{
+	width:50%;
+
+}
+.column{
+	float:left;
+}
+.column-2{
+	width:20%;
+	margin-top:20%;
+}
+.column-6{
+	width:60%;
+}
+.glyphicon{
+font-size:40px;
+}
+
+
+
+.input{
+	width:50%;
+	height: 30px;
+	border-top:1px solid grey;
+}
+
+#logUser{
+	margin-left: 33.3%
+}
+.navbar-toggle .icon-bar:nth-of-type(2) {
+	  top: 1px;
+}
+
+.navbar-toggle .icon-bar:nth-of-type(3) {
+  	top: 2px;
+}
+
+.navbar-toggle .icon-bar {
+	  position: relative;
+	  transition: all 500ms ease-in-out;
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(1) {
+	  top: 6px;
+	  transform: rotate(45deg);
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(2) {
+	  background-color: transparent;
+}
+
+.navbar-toggle.active .icon-bar:nth-of-type(3) {
+	  top: -6px;
+	  transform: rotate(-45deg);
+}
