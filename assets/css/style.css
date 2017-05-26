@@ -9,7 +9,9 @@ button{
 #name{
 	text-align: center
 }
-
+.searchRow{
+	min-height: 100px;
+}
 .display{
 	width:75%;
 	margin-left: 12.5%;
@@ -32,6 +34,10 @@ button{
 .column-2{
 	width:20%;
 	margin-top:20%;
+}
+.column-5{
+	width: 50%;
+	border:2px solid black;
 }
 .column-6{
 	width:60%;

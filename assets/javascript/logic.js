@@ -104,14 +104,56 @@ connectedRef.on("value", function(snap) {
   }
 });
 
-  var apiKey = "cb6a30e95d827e83a94394acaee07397"
+var zipcode = "";
+var animal ="";
+var size = "";
+var age = "";
 
-$.getJSON('http://api.petfinder.com/pet.find?&animal=dog&location=78734&age=adult&size=S&format=json&key='+apiKey+'&callback=?')
-  .done(function(response) {
-   var pets = response.petfinder.pets;
-   console.log(pets)
+$("#dog").on("click", function(){
+  console.log("dog selected")
+  $("#animalSelected").html("dog")
+})
+$("#cat").on("click", function(){
+  console.log("cat selected")
+  $("#animalSelected").html("cat")
+})
+$("#adult").on("click", function(){
+  console.log("adult age selected")
+  $("#ageSelected").html("adult")
+})
+$("#senior").on("click", function(){
+  console.log("senior age selected")
+  $("#ageSelected").html("senior")
+})
+$("#small").on("click", function(){
+  console.log("small size selected")
+  $("#sizeSelected").html("small")
+})
+$("#medium").on("click", function(){
+  console.log("medium size selected")
+  $("#sizeSelected").html("medium")
+})
+$("#large").on("click", function(){
+  console.log("large size selected")
+  $("#sizeSelected").html("large")
+})
 
-  }).error(function(err) { alert('Error retrieving data!'); 
+$("#save").on("click", function(){
+
+  zipcode = $("#zipcode").val().trim();
+  animal = $("#animalSelected").text();
+  age = $("#ageSelected").text();
+  size = $("#sizeSelected").text().charAt(0).toUpperCase();
+
+    var apiKey = "cb6a30e95d827e83a94394acaee07397"
+
+  $.getJSON('http://api.petfinder.com/pet.find?&animal='+animal+'&location='+zipcode+'&age='+age+'&size='+size+'&format=json&key='+apiKey+'&callback=?')
+    .done(function(response) {
+     var pets = response.petfinder.pets;
+     console.log(pets)
+
+    }).error(function(err) { alert('Error retrieving data!'); 
+  });
 });
 
 
