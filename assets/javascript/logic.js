@@ -144,10 +144,23 @@ $(document).ready(function() {
         zipcode = $("#zipcode").val().trim();
         animal = $("#animalSelected").text();
         age = $("#ageSelected").text();
-        size = $("#sizeSelected").text().charAt(0).toUpperCase();
-
+        size = $("#sizeSelected").text();
         var apiKey = "cb6a30e95d827e83a94394acaee07397";
-        var url = 'http://api.petfinder.com/pet.find?&animal=' + animal + '&location=' + zipcode + '&age=' + age + '&size=' + size + '&format=json&key=' + apiKey;
+        var url = 'http://api.petfinder.com/pet.find?';
+        if (zipcode.length = 5){
+            url += '&location=' + zipcode;
+        }
+        if (animal.length < 10){
+            url += '&animal=' + animal;
+        }
+        if ( age.length < 10){
+            url += '&age=' + age;
+        }
+        if (size.length < 10){
+            url += '&size=' + size.charAt(0).toUpperCase();
+        }
+        url += '&format=json&key=' + apiKey;
+        console.log(url)
         $.ajax({
             type: "GET",
             data: {},
@@ -157,6 +170,7 @@ $(document).ready(function() {
                 var petfinder = data.petfinder.pets.pet;
                 console.log(petfinder)
                 //gets all animal info and pushes to petInfo array
+                petInfo = [];
                 for (i=0;i<petfinder.length;i++){
                     var photo = petfinder[i].media.photos.photo[2]["$t"];
                     var name = petfinder[i].name["$t"];
