@@ -13,6 +13,8 @@
 	<!--links bootstrap js-->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	</script>
+	<!--flip plugin-->
+	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 	<!--links firebase-->
 	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js">
 	</script>
@@ -24,7 +26,7 @@
 </head>
 <body>
 	<!--header div-->
-	<div class="page-header">
+	<div class="header">
 		<!--navbar div-->
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<!--sets hamburger btn toggle-->
@@ -80,7 +82,7 @@
 			<br>
 			<label></label>
 			<h2><label>Password</label></h2><br>
-			<input class="input" id='passwordInput' type='text'><br>
+			<input class="input" id='passwordInput' type='password'><br>
 			<br>
 			<button id='signUp' type='text'>SIGN UP</button> <button id='login' type='text'>LOG IN</button>
 		</form>
@@ -99,10 +101,18 @@
 				</div>
 				<!--holds all current pet info-->
 				<div class="column column-6">
-					<!--current pet img-->
-					<img class="logged-in-img img" src="assets/images/loggedInImg.JPG">
-					<div class="description">
-					</div>
+						<div id="card">
+							<div class="front">
+							<!-- front content -->
+							<!--current pet img-->
+								<img class="logged-in-img img" src="assets/images/loggedInImg.JPG">
+							</div>
+							<div class="back">
+						<!-- back content -->
+								<div class="description">
+								</div>
+							</div>
+						</div>
 				</div>
 				<div class="column column-2">
 					<div id="menu-right">

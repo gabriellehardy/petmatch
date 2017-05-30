@@ -3,6 +3,9 @@ $(document).ready(function() {
         $(this).toggleClass("active");
     });
 
+    $("#card").flip({
+      trigger: 'click'
+    });
     //initialize firebase
     var config = {
         apiKey: "AIzaSyB8dlnUx6FvgQebpp-Whw2t1aI-UyD1_X4",
