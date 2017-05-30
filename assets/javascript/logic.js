@@ -163,8 +163,8 @@ $(document).ready(function() {
                     petInfo.push({description,photo,name});
                 }; 
                 //sets first animal info 
-                $("#newImg").attr("src", petInfo[0].photo)
-                $("#name").html(name)                
+                $("#newImg").attr("src", petInfo[0].photo);
+                $("#name").html(name);                
             },
             error: function(request, error) {
                 alert("Request: " + JSON.stringify(request))
