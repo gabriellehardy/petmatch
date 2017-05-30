@@ -178,7 +178,15 @@ $(document).ready(function() {
                 $("#newImg").attr("src", petInfo[i].photo);                
                 $("#name").html(petInfo[i].name);
                 $(".description").html(petInfo[i].description)                  
-                });                
+                }); 
+                $("#menu-left").on("click", function(){
+                  i = (i-1)%petfinder.length;
+                $(".logged-in-img").attr("id","newImg");
+                $("#newImg").removeClass("logged-in-img");
+                $("#newImg").attr("src", petInfo[i].photo);                
+                $("#name").html(petInfo[i].name);
+                $(".description").html(petInfo[i].description)                  
+                });                               
             },
             error: function(request, error) {
                 alert("Request: " + JSON.stringify(request))
