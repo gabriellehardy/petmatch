@@ -164,7 +164,15 @@ $(document).ready(function() {
                 }; 
                 //sets first animal info 
                 $("#newImg").attr("src", petInfo[0].photo);
-                $("#name").html(name);                
+                $("#name").html(name);
+
+                var i = 0;
+                $("#menu-right").on("click", function(){
+                  i = (i+1)%petfinder.length;
+                  $("#newImg").attr("src", petInfo[0].photo);
+                  $("#name").html(name); 
+                  console.log(petfinder[i]);
+                });                
             },
             error: function(request, error) {
                 alert("Request: " + JSON.stringify(request))
