@@ -169,6 +169,14 @@ $(document).ready(function() {
                 $("#newImg").attr("src", petInfo[0].photo);
                 $("#name").html(petInfo[0].name);
                 $(".description").html(petInfo[0].description)                
+
+                var i = 0;
+                $("#menu-right").on("click", function(){
+                  i = (i+1)%petfinder.length;
+                  $("#newImg").attr("src", petInfo[0].photo);
+                  $("#name").html(name); 
+                  console.log(petfinder[i]);
+                });                
             },
             error: function(request, error) {
                 alert("Request: " + JSON.stringify(request))
