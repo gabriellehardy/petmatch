@@ -169,13 +169,15 @@ $(document).ready(function() {
                 $("#newImg").attr("src", petInfo[0].photo);
                 $("#name").html(petInfo[0].name);
                 $(".description").html(petInfo[0].description)                
-
+                //sets all others
                 var i = 0;
                 $("#menu-right").on("click", function(){
                   i = (i+1)%petfinder.length;
-                  $("#newImg").attr("src", petInfo[0].photo);
-                  $("#name").html(name); 
-                  console.log(petfinder[i]);
+                $(".logged-in-img").attr("id","newImg");
+                $("#newImg").removeClass("logged-in-img");
+                $("#newImg").attr("src", petInfo[i].photo);                
+                $("#name").html(petInfo[i].name);
+                $(".description").html(petInfo[i].description)                  
                 });                
             },
             error: function(request, error) {
