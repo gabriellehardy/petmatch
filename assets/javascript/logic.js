@@ -155,16 +155,20 @@ $(document).ready(function() {
             dataType: "json",
             success: function(data) {
                 var petfinder = data.petfinder.pets.pet;
+                console.log(petfinder)
                 //gets all animal info and pushes to petInfo array
                 for (i=0;i<petfinder.length;i++){
-                    var photo = petfinder[i].media.photos.photo[0]["$t"];
+                    var photo = petfinder[i].media.photos.photo[2]["$t"];
                     var name = petfinder[i].name["$t"];
                     var description = petfinder[i].description["$t"];
                     petInfo.push({description,photo,name});
                 }; 
-                //sets first animal info 
+                //sets first animal info
+                $(".logged-in-img").attr("id","newImg");
+                $("#newImg").removeClass("logged-in-img");
                 $("#newImg").attr("src", petInfo[0].photo);
-                $("#name").html(name);                
+                $("#name").html(petInfo[0].name);
+                $(".description").html(petInfo[0].description)                
             },
             error: function(request, error) {
                 alert("Request: " + JSON.stringify(request))
