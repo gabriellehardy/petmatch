@@ -65,8 +65,6 @@ $(document).ready(function() {
         var promise = auth.createUserWithEmailAndPassword(email, password);
         var loginError = promise.catch(e => console.log(e.message));
 
-
-
     })
 
     $("#logOut").on("click", function() {
@@ -86,6 +84,7 @@ $(document).ready(function() {
             $("#logOut").removeClass("hidden");
             $("#search").removeClass("hidden");
             $("#searchPetsBtn").removeClass("hidden");
+            $("#browsePetsBtn").removeClass("hidden");
 
         } else {
             console.log("not logged in")

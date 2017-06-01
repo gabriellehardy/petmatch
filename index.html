@@ -25,6 +25,7 @@
 	</script>
 </head>
 <body>
+
 	<!--header div-->
 	<div class="header">
 		<!--navbar div-->
@@ -43,7 +44,10 @@
 						<a class="hidden" id="searchPetsBtn" href="#" data-toggle="modal" data-target="#searchPets">
 							Search Pets
 						</a>
-					</li>				
+					</li>
+					<li class="active">
+						<a class="hidden" id="browsePetsBtn" href="#">Browse</a>
+					</li>
 					<li class="active">
 						<a class="link" href="" id='loginForm'>
 							Login
@@ -86,6 +90,7 @@
 			<br>
 			<button id='signUp' type='text'>SIGN UP</button> <button id='login' type='text'>LOG IN</button>
 		</form>
+		<!--facebook login button goes here-->
 		<!--active div when a user is not logged in-->
 		<div class="display" id="loggedOutDisplay">
 			<img class="logged-out-img img" src="assets/images/loggedOutImg.JPG">
@@ -109,6 +114,7 @@
 							</div>
 							<div class="back">
 						<!-- back content -->
+								<br>
 								<div class="description">
 								</div>
 							</div>
@@ -123,6 +129,11 @@
 			</div>
 		</div>
 		<!--end of (main pet div)-->
+
+		<!--browse pets display-->
+		
+		<!-- end browse -->
+
 		<!--modal-->
 		<div class="modal fade" id="searchPets" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
 		  <div class="modal-dialog modal-lg">
@@ -180,7 +191,8 @@
 		      </div>
 		    </div>
 		  </div>
-		</div>		
+		</div>
+		<!--end modal-->		
 	</div>
 </body>
 </html>
