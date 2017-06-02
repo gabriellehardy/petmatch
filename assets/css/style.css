@@ -1,4 +1,10 @@
-body{
+
+/*utility classes*/
+.hidden {
+	display: none;
+}
+
+/*body{
 	background-color: #7a7a7a;
 }
 button{
@@ -96,4 +102,4 @@ font-size:40px;
 position:relative;
 text-align: center;
 font-size: 12px;
-}
+}*/

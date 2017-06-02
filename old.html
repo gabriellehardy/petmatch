@@ -1,0 +1,169 @@
+
+	<!--header div-->
+	<div class="header">
+		<!--navbar div-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<!--sets hamburger btn toggle-->
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+			</div>
+			<!--collapsable nav links-->
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="index.html">Home</a>
+					</li>
+					<li class="active">
+						<a class="hidden" id="searchPetsBtn" href="#" data-toggle="modal" data-target="#searchPets">
+							Search Pets
+						</a>
+					</li>
+					<li class="active">
+						<a class="hidden" id="browsePetsBtn" href="#">Browse</a>
+					</li>
+					<li class="active">
+						<a class="link" href="" id='loginForm'>
+							Login
+						</a>
+					</li>
+					<li class="active">
+						<a class="link" href="" id='signUpForm'>
+							Sign Up
+						</a>
+					</li>
+					<li class="active">
+						<a class="hidden" href="" id="logOut">
+							Log Out
+						</a>
+					</li>
+				</ul>
+			</div>		
+		</div>
+		<!--end of header-->
+	</div>
+	<!--main content-->
+	<div class="jumbotron">
+		<!--pet name row-->
+		<div class="row">
+
+			<div class="hidden petName">
+		<!--insert value of pet name here #name-->
+				<h1 id="name">WOOFY</h1>
+			</div>
+		</div>
+		<!--login/sign up form-->
+		<form class="hidden" id='logUser' name="logUser">
+			<label></label>
+			<h2><label>Email</label></h2><br>
+			<input class="input" id='emailInput' type='text'><br>
+			<br>
+			<label></label>
+			<h2><label>Password</label></h2><br>
+			<input class="input" id='passwordInput' type='password'><br>
+			<br>
+			<button id='signUp' type='text'>SIGN UP</button> <button id='login' type='text'>LOG IN</button>
+		</form>
+		<!--facebook login button goes here-->
+		<!--active div when a user is not logged in-->
+		<div class="display" id="loggedOutDisplay">
+			<img class="logged-out-img img" src="assets/images/loggedOutImg.JPG">
+		</div>
+		<!--active div when a user is logged in (main pet div)-->
+		<div class="hidden" id="loggedInDisplay">
+			<div class="row">
+				<div class="column column-2">
+					<div id="menu-left">
+					<!--slide pet left arrow-->
+						<span class="glyphicon glyphicon-arrow-left"></span>
+					</div>
+				</div>
+				<!--holds all current pet info-->
+				<div class="column column-6">
+						<div id="card">
+							<div class="front">
+							<!-- front content -->
+							<!--current pet img-->
+								<img class="logged-in-img img" src="assets/images/loggedInImg.JPG">
+							</div>
+							<div class="back">
+						<!-- back content -->
+								<br>
+								<div class="description">
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="column column-2">
+					<div id="menu-right">
+					<!--slide pet right arrow-->
+						<span class="glyphicon glyphicon-arrow-right"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end of (main pet div)-->
+
+		<!--browse pets display-->
+		
+		<!-- end browse -->
+
+		<!--modal-->
+		<div class="modal fade" id="searchPets" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+		  <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title" id="myModalLabel">Search Pets</h4>
+		      </div>
+		      <div class="modal-body">
+				<div class="row">
+					
+				</div>
+				<div class="row searchRow">
+					<div class="column column-5">
+						<label>Zipcode:</label>
+						<input type="text" name="location" id="zipcode">
+					</div>
+					<div class="column column-5">
+					<!--drop down for animal type selection-->
+						<div class="dropdown">
+  							<button class="btn btn-default dropdown-toggle" type="button" id="animalSelected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">select an animal<span class="caret"></span></button>
+						  <ul class="dropdown-menu">
+						    <li><a href="#" id="dog">Dog</a></li>
+						    <li><a href="#" id="cat">Cat</a></li>
+						  </ul>
+						</div>
+					</div>
+				</div>
+				<div class="row searchRow">
+					<div class="column column-5">
+						<div class="dropdown">
+  							<button class="btn btn-default dropdown-toggle" type="button" id="ageSelected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">select an age<span class="caret"></span></button>
+						  <ul class="dropdown-menu">
+						    <li><a href="#" id="adult">Adult</a></li>
+						    <li><a href="#" id="senior">Senior</a></li>
+						  </ul>
+						</div>						
+					</div>
+					<div class="column column-5">
+						<div class="dropdown">					
+  							<button class="btn btn-default dropdown-toggle" type="button" id="sizeSelected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">select a size<span class="caret"></span></button>
+						  <ul class="dropdown-menu">
+						    <li><a href="#" id="small">small</a></li>
+						    <li><a href="#" id="medium">medium</a></li>
+						    <li><a href="#" id="large">large</a></li>
+
+						  </ul>
+						</div>
+					</div>
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary" id="save">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!--end modal-->		
+	</div>

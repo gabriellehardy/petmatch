@@ -15,8 +15,9 @@
 </head>
 <body>
 
-	<section class="hero is-fullheight is-default is-bold">
-    <div class="hero-head">
+
+<section class="hero is-fullheight is-bold" id='logUser' name="logUser">
+  <div class="hero-head">
       <div class="container">
         <nav class="nav has-shadow">
           <div class="container">
@@ -31,7 +32,7 @@
               <span></span>
             </span>
             <div class="nav-right nav-menu">
-              <a class="nav-item is-tab is-active">
+              <a class="nav-item is-tab" href="index.html">
                 Home
               </a>
               <a class="nav-item is-tab">
@@ -56,44 +57,47 @@
         </nav>
       </div>
     </div>
-
     <div class="hero-body">
-      <div class="container has-text-centered">
-        <div class="columns is-vcentered">
-          <div class="column is-5">
-            <figure class="image is-4by3">
-              <img src="http://placehold.it/800x600" alt="Description">
-            </figure>
-          </div>
-          <div class="column is-6 is-offset-1">
-            <h1 class="title is-2">
-              Superhero Scaffolding
-            </h1>
-            <h2 class="subtitle is-4">
-              Let this cover page describe a product or service.
-            </h2>
-            <br>
-            <p class="has-text-centered">
-              <a class="button is-large">
-                Learn more
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-foot">
       <div class="container">
-        <div class="tabs is-centered">
-          <ul>
-            <li><a>And this at the bottom</a></li>
-          </ul>
+        <div class="columns is-vcentered">
+          <div class="column is-4 is-offset-4">
+            <h1 class="title">
+              Register an Account
+            </h1>
+            <div class="box">
+              <label class="label">Name</label>
+              <p class="control">
+                <input class="input" type="text" placeholder="John Smith">
+              </p>
+              <label class="label">Username</label>
+              <p class="control">
+                <input class="input" type="text" placeholder="jsmith">
+              </p>
+              <label class="label">Email</label>
+              <p class="control">
+                <input class="input" type="text" placeholder="jsmith@example.org">
+              </p>
+              <hr>
+              <label class="label">Password</label>
+              <p class="control">
+                <input class="input" type="password" placeholder="●●●●●●●">
+              </p>
+              <label class="label">Confirm Password</label>
+              <p class="control">
+                <input class="input" type="password" placeholder="●●●●●●●">
+              </p>
+              <hr>
+              <p class="control">
+                <button class="button is-primary">Register</button>
+                <button class="button is-default">Cancel</button>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
+  </section>
 
 
 

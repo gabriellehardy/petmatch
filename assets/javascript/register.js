@@ -39,7 +39,6 @@ $(document).ready(function() {
 
         // User is signed in.
       } else {
-        window.location.href = 'index.html';
         console.log('no user');
         // No user is signed in.
       }
