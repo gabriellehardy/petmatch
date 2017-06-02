@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>petMATCH</title>
-	<!---links jquery-->
-	
+<link rel="icon" href="./assets/images/logo.png">
+
+  <title>adoptable</title>
 	<!--links animate.css-->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
@@ -23,7 +23,9 @@
           <div class="container">
             <div class="nav-left">
               <a class="nav-item" href="../index.html">
-                <img src="../images/bulma.png" alt="Description">
+                ad
+                <img src="assets/images/logo.png" alt="adoptable logo">
+                ptable
               </a>
             </div>
             <span class="nav-toggle">
@@ -32,19 +34,19 @@
               <span></span>
             </span>
             <div class="nav-right nav-menu">
-              <a class="nav-item is-tab" href="index.html">
-                Home
+              <a id="nav-home" class="nav-item is-tab" href="index.html">
+                Home 
               </a>
-              <a class="nav-item is-tab">
-                Features
+               <a id="nav-profile" class="nav-item is-tab" href="profile.html">      
+                Profile
               </a>
-              <a class="nav-item is-tab">
-                Team
+               <a id="nav-find" class="nav-item is-tab" href="find.html">
+                Find
               </a>
-              <a class="nav-item is-tab">
-                Help
+              <a id="nav-about" class="nav-item is-tab" href="about.html">
+                About 
               </a>
-              <span class="nav-item">
+              <span id="nav-login" class="nav-item">
                 <a class="button" id='loginForm' href="login.html">
                   Log in
                 </a>
@@ -52,11 +54,17 @@
                   Sign up
                 </a>
               </span>
+              <span id="nav-logout" class="nav-item">
+                <a class="button" id='logOut' href="">
+                  Log Out
+                </a>
+              </span>
             </div>
           </div>
         </nav>
       </div>
     </div>
+
     <div class="hero-body">
       <div class="container">
         <div class="columns is-vcentered">
@@ -108,6 +116,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+  <script src="assets/javascript/base.js"></script>
 	<script src="assets/javascript/login.js"></script>
 </body>
 </html>
