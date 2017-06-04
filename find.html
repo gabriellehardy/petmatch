@@ -65,8 +65,8 @@
           <div class="field-body">
             <div class="field is-grouped">
               <div class="control">
-                <label><input id="Cats" type="radio" name="toggler" value="Cats"/>Cats</label>
-                <label><input id="Dogs" type="radio" name="toggler" value="Dogs"/>Dogs</label>
+                <label><input id="cat" type="radio" name="toggler" value="Cats"/>Cats</label>
+                <label><input id="dog" type="radio" name="toggler" value="Dogs"/>Dogs</label>
               </div>
             </div>
           </div>
@@ -82,11 +82,11 @@
           <div class="field is-narrow">
             <div class="control">
               <label class="radio">
-                <input type="radio" name="age">
+                <input id="adult" type="radio" name="age">
                 Adult
               </label>
               <label class="radio">
-                <input type="radio" name="age">
+                <input id="senior"type="radio" name="age">
                 Senior
               </label>
             </div>
@@ -101,23 +101,29 @@
           <div class="field is-narrow">
             <div class="control" align="center">
               <label class="radio">
-                <input type="radio" name="size">
+                <input type="radio" name="size" id="small">
                   Small
                 </label>
               <label class="radio">
-                <input type="radio" name="size">
+                <input type="radio" name="size" id="medium">
                 Medium
               </label>
               <label class="radio">
-                <input type="radio" name="size">
+                <input type="radio" name="size" id="large">
                 Large
               </label>
             </div><hr>
           </div>
         </div>
       </div>
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" name="location" id="zipcode" placeholder="zipcode">
+        </p>
+      </div>
+      <hr>
       <div class="is-centered">
-        <a class="button is-normal"><img src="assets/images/logo.png">Find Pets</a>
+        <a id="save" class="button is-normal"><img src="assets/images/logo.png">Find Pets</a>
       </div>
     </div>
     </div>
@@ -125,6 +131,8 @@
     <!-- begin populating data here -->
     <div class="column is-10">
       <div class="box">
+      
+        
       </div>
     </div>
     <!-- end data here -->

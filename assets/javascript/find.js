@@ -1,14 +1,14 @@
 $(document).ready(function() {
 
     
-    $("#Dogs").click(function(){
+    $("#dog").click(function(){
             $('.toHide').hide();
             $("#sizeSelector").show('slow');
  
  }); 
 
 
-    $("#Cats").click(function(){
+    $("#cat").click(function(){
             $('.toHide').hide();
             $("#sizeSelector").hide('slow');
  
