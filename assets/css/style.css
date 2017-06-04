@@ -4,7 +4,9 @@
 	display: none;
 }
 
-
+.is-centered {
+	text-align: center;
+}
 
 /*body{
 	background-color: #7a7a7a;
