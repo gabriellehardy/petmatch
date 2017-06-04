@@ -8,6 +8,11 @@
 	text-align: center;
 }
 
+.container.profile,
+.container.find {
+  margin-top:50px;
+}
+
 /*body{
 	background-color: #7a7a7a;
 }
