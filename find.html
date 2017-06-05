@@ -63,12 +63,15 @@
       <div class="field is-horizontal">
         <br>
           <div class="field-body">
-            <div class="field is-grouped">
-              <div id="animalSelected" class="control">
+            <div class="field is-grouped" id="animalField">
+              <div id="animalSelection" class="control">
                 <label><input id="cat" type="radio" name="toggler" value="cat"/>Cat</label>
                 <label><input id="dog" type="radio" name="toggler" value="dog"/>Dog</label>
               </div>
             </div>
+              <div class='editBtn editAnimal hidden'>
+                <a class='button is-info'>edit</a>
+              </div>            
           </div>
       </div>
       <hr>
@@ -79,18 +82,21 @@
         </div> -->
         <br>
         <div class="field-body">
-          <div class="field is-narrow">
-            <div id="ageSelected" class="control">
+          <div class="field is-grouped" id="ageField">
+            <div id="ageSelection" class="control">
               <label class="radio">
-                <input id="adult" type="radio" name="age">
+                <input id="adult" type="radio" name="age" value="adult">
                 Adult
               </label>
               <label class="radio">
-                <input id="senior" type="radio" name="age">
+                <input id="senior" type="radio" name="age" value="senior">
                 Senior
               </label>
             </div>
           </div>
+            <div class='editBtn editAge hidden'>
+              <a class='button is-info'>edit</a>
+            </div>         
         </div>
       </div>
       <hr>
@@ -98,22 +104,25 @@
       <div class="field is-horizontal toHide" id="sizeSelector" style="display:none">
         <br>
         <div class="field-body">
-          <div class="field is-narrow">
-            <div id="sizeSelected" class="control" align="center">
+          <div class="field is-narrow" id="sizeField">
+            <div id="sizeSelection" class="control" align="center">
               <label class="radio">
-                <input type="radio" name="size" id="small">
+                <input type="radio" name="size" id="small" value="S">
                   Small
                 </label>
               <label class="radio">
-                <input type="radio" name="size" id="medium">
+                <input type="radio" name="size" id="medium" value="M">
                 Medium
               </label>
               <label class="radio">
-                <input type="radio" name="size" id="large">
+                <input type="radio" name="size" id="large" value="L">
                 Large
               </label>
             </div><hr>
           </div>
+              <div class='editBtn editSize hidden'>
+                <a class='button is-info'>edit</a>
+              </div>
         </div>
       </div>
       <div class="field">

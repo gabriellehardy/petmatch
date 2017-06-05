@@ -12,7 +12,12 @@
 .container.find {
   margin-top:50px;
 }
-
+#fb-divider{
+	margin-top:100%;
+}
+.editBtn{
+	font-size: 8px;
+}
 /*body{
 	background-color: #7a7a7a;
 }
