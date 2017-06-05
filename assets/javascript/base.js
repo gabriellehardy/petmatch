@@ -26,7 +26,6 @@ FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     console.log('Logged in.');
     console.log(response)
-    window.location.href = 'profile.html';
   }
   else if(response.status === "not_authorized"){
     console.log("not logged in")
