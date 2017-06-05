@@ -26,6 +26,7 @@ FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     console.log('Logged in.');
     console.log(response)
+    window.location.href = 'profile.html';
   }
   else if(response.status === "not_authorized"){
     console.log("not logged in")
@@ -41,6 +42,7 @@ FB.getLoginStatus(function(response) {
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
   $("#logout").on("click", function(){
     FB.logout(function(response){
         console.log("logged out")
