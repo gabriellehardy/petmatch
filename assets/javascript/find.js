@@ -129,7 +129,9 @@ $(document).ready(function() {
             }
             if (offset > 0){
                 url += "&offset="+offset;
-
+                $("#prevPage").removeClass("hidden")
+            }else{
+                $("#prevPage").addClass("hidden")
             }
             url += '&format=json&key=' + apiKey + "&count=9";
             console.log(url)
@@ -205,6 +207,11 @@ $(document).ready(function() {
             offset += 9;
             ajax();
         })
+        $("#prevPage").on("click", function(){
+            console.log("works")
+            offset -= 9;
+            ajax();
+        })        
         console.log(petInfo);
         
     });
