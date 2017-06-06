@@ -107,7 +107,6 @@ $(document).ready(function() {
     $("#save").on("click", function(e) {
         e.preventDefault();
         //clears petInfo 
-
         function ajax(){
             petInfo = [];
             zipcode = $("#zipcode").val().trim();
@@ -167,6 +166,7 @@ $(document).ready(function() {
                         $("#"+i).attr("class", "petImage")
 
                     }
+                    $(".petContainer").removeClass("hidden");
                     //sets first animal info
                     // $(".logged-in-img").attr("id","newImg");
                     // $("#newImg").removeClass("logged-in-img");
