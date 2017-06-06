@@ -32,7 +32,7 @@ $(document).ready(function() {
     var animal = "";
     var size = "";
     var age = "";
-
+    var offset = 0;
     $("#dog").on("click", function() {
         console.log("dog selected")
         $(".editAnimal").removeClass("hidden")
@@ -128,8 +128,10 @@ $(document).ready(function() {
             if (size.length < 10){
                 url += '&size=' + size.charAt(0).toUpperCase();
             }
-            if (petInfo.length == 25){
-              url += "&offset=lastOffset";
+            if (petInfo.length > 0){
+                offset += 25;
+                url += "&offset="+offset;
+
             }
             url += '&format=json&key=' + apiKey;
             console.log(url)
@@ -154,36 +156,36 @@ $(document).ready(function() {
                         }
                         else if (photo == null){
                             /*photo = url(insert photo location here)*/
-
+                            photo = "no picture available" 
                         }
                  
                         petInfo.push({description,photo,name,pid,email});
                     }; 
                     //sets first animal info
-                    $(".logged-in-img").attr("id","newImg");
-                    $("#newImg").removeClass("logged-in-img");
-                    $("#newImg").attr("src", petInfo[0].photo);
-                    $("#name").html(petInfo[0].name);
-                    $(".description").html(petInfo[0].description.substring(0,1000) + "&hellip;")
-                    //sets all others
-                    var i = 0;
-                    $("#menu-right").on("click", function(){
-                        i = (i+1)%petfinder.length;
-                        $(".logged-in-img").attr("id","newImg");
-                        $("#newImg").removeClass("logged-in-img");
-                        $("#newImg").attr("src", petInfo[i].photo);
-                        $("#name").html(petInfo[i].name);
-                        $(".description").html(petInfo[i].description.substring(0,1000) + "&hellip;")
+                    // $(".logged-in-img").attr("id","newImg");
+                    // $("#newImg").removeClass("logged-in-img");
+                    // $("#newImg").attr("src", petInfo[0].photo);
+                    // $("#name").html(petInfo[0].name);
+                    // $(".description").html(petInfo[0].description.substring(0,1000) + "&hellip;")
+                    // //sets all others
+                    // var i = 0;
+                    // $("#menu-right").on("click", function(){
+                    //     i = (i+1)%petfinder.length;
+                    //     $(".logged-in-img").attr("id","newImg");
+                    //     $("#newImg").removeClass("logged-in-img");
+                    //     $("#newImg").attr("src", petInfo[i].photo);
+                    //     $("#name").html(petInfo[i].name);
+                    //     $(".description").html(petInfo[i].description.substring(0,1000) + "&hellip;")
 
-                    });
-                    $("#menu-left").on("click", function(){
-                        i = (i-1)%petfinder.length;
-                        $(".logged-in-img").attr("id","newImg");
-                        $("#newImg").removeClass("logged-in-img");
-                        $("#newImg").attr("src", petInfo[i].photo);                
-                        $("#name").html(petInfo[i].name);
-                        $(".description").html(petInfo[i].description.substring(0,1000) + "&hellip;")                 
-                    });                               
+                    // });
+                    // $("#menu-left").on("click", function(){
+                    //     i = (i-1)%petfinder.length;
+                    //     $(".logged-in-img").attr("id","newImg");
+                    //     $("#newImg").removeClass("logged-in-img");
+                    //     $("#newImg").attr("src", petInfo[i].photo);                
+                    //     $("#name").html(petInfo[i].name);
+                    //     $(".description").html(petInfo[i].description.substring(0,1000) + "&hellip;")                 
+                    // });                               
                 },
                 error: function(request, error) {
                     alert("Request: " + JSON.stringify(request))
@@ -191,8 +193,11 @@ $(document).ready(function() {
 
             });
         };
-
         ajax();
+        $("#nextPage").on("click", function(){
+            console.log("works")
+            ajax();
+        })
         console.log(petInfo);
         
     });
