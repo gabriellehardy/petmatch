@@ -26,6 +26,8 @@ FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     console.log('Logged in.');
     console.log(response)
+    var provider = firebase.auth.FacebookAuthProvider();
+    provider.catch(e => console.log(e.message));
   }
   else if(response.status === "not_authorized"){
     console.log("not logged in")
