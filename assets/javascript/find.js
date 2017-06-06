@@ -145,7 +145,12 @@ $(document).ready(function() {
                     console.log(petfinder)
                     //gets all animal info and pushes to petInfo array
                     for (i=0;i<petfinder.length;i++){
-                        var photo = petfinder[i].media.photos.photo[2]["$t"];
+						try {
+							var photo = petfinder[i].media.photos.photo[2]["$t"];
+						}
+						catch(err){
+							var photo = "../images/dog-placeholder.jpg";
+						}
                         var name = petfinder[i].name["$t"];
                         var description = petfinder[i].description["$t"];
                         var pid = petfinder[i].id["$t"];
@@ -153,10 +158,6 @@ $(document).ready(function() {
 
                         if (description == null){
                             description = "No description available"
-                        }
-                        else if (photo == null){
-                            /*photo = url(insert photo location here)*/
-                            photo = "no picture available" 
                         }
                  
                         petInfo.push({description,photo,name,pid,email});
