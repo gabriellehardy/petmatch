@@ -148,7 +148,7 @@ $(document).ready(function() {
 							var photo = petfinder[i].media.photos.photo[2]["$t"];
 						}
 						catch(err){
-							var photo = "../images/dog-placeholder.jpg";
+							var photo = "petmatch/assets/images/dog-placeholder.jpg";
 						}
                         var name = petfinder[i].name["$t"];
                         var description = petfinder[i].description["$t"];
