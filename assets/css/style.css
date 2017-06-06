@@ -15,8 +15,10 @@
 #fb-divider{
 	margin-top:100%;
 }
-.editBtn{
-	font-size: 8px;
+.petImage{
+	height: 300px;
+	width:300px;
+	border-radius: 10%;
 }
 /*body{
 	background-color: #7a7a7a;

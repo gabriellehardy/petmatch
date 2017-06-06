@@ -107,9 +107,9 @@ $(document).ready(function() {
     $("#save").on("click", function(e) {
         e.preventDefault();
         //clears petInfo 
-        petInfo = [];
 
         function ajax(){
+            petInfo = [];
             zipcode = $("#zipcode").val().trim();
             animal = $("#animalSelected").text();
             age = $("#ageSelected").text();
@@ -128,12 +128,11 @@ $(document).ready(function() {
             if (size.length < 10){
                 url += '&size=' + size.charAt(0).toUpperCase();
             }
-            if (petInfo.length > 0){
-                offset += 25;
+            if (offset > 0){
                 url += "&offset="+offset;
 
             }
-            url += '&format=json&key=' + apiKey;
+            url += '&format=json&key=' + apiKey + "&count=9";
             console.log(url)
             $.ajax({
                 type: "GET",
@@ -161,7 +160,13 @@ $(document).ready(function() {
                         }
                  
                         petInfo.push({description,photo,name,pid,email});
+                        console.log(petInfo)
                     }; 
+                    for (i=0;i<petfinder.length;i++){
+                        $("#"+i).attr("src",petInfo[i].photo)
+                        $("#"+i).attr("class", "petImage")
+
+                    }
                     //sets first animal info
                     // $(".logged-in-img").attr("id","newImg");
                     // $("#newImg").removeClass("logged-in-img");
@@ -197,6 +202,7 @@ $(document).ready(function() {
         ajax();
         $("#nextPage").on("click", function(){
             console.log("works")
+            offset += 9;
             ajax();
         })
         console.log(petInfo);
