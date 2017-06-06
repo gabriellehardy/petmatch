@@ -106,6 +106,8 @@ $(document).ready(function() {
     })
     $("#save").on("click", function(e) {
         e.preventDefault();
+        //resets offset for new search
+        offset = 0;
         //clears petInfo 
         function ajax(){
             petInfo = [];
