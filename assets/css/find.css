@@ -12,12 +12,6 @@
 .is-info{
 	font-size: 12px;
 }
-.petBox{
-	position: relative;
-}
-.favoritesBtn{
-	position: absolute;
-	bottom:20px;
-	width:250px;
-	border-radius: 0;
+.card{
+	margin-bottom: 20px;
 }
