@@ -33,6 +33,19 @@ $(document).ready(function() {
     var size = "";
     var age = "";
     var offset = 0;
+    var state = "front";
+    $(".card").on("click", function(){
+        if (state === "front"){
+            $(this).children(".front").addClass("hidden")
+            $(this).children(".back").removeClass("hidden")
+            state = "back"
+        } else if (state === "back"){
+            $(this).children(".front").removeClass("hidden")
+            $(this).children(".back").addClass("hidden")
+            state = "front"
+        }
+
+    })
     $("#dog").on("click", function() {
         console.log("dog selected")
         $(".editAnimal").removeClass("hidden")
@@ -104,6 +117,7 @@ $(document).ready(function() {
         $("#sizeSelection").removeClass("hidden")
         $("#sizeSelected").remove()       
     })
+
     $("#save").on("click", function(e) {
         e.preventDefault();
         //resets offset for new search
@@ -175,6 +189,10 @@ $(document).ready(function() {
                         $("#image-"+i).attr("class", "petImage")
                         $(".title-"+i).html(petInfo[i].name)
                         $(".subtitle-"+i).html(petInfo[i].breed + " | " + petInfo[i].sex)
+                        $(".description-"+i).html(petInfo[i].description.substring(0,500) + "&hellip;")
+
+
+                       
 
                     }
                     $(".petContainer").removeClass("hidden");
