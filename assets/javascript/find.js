@@ -174,16 +174,21 @@ $(document).ready(function() {
 						}
                         var name = petfinder[i].name["$t"];
                         var description = petfinder[i].description["$t"];
+                        if (description == null){
+                            description = "No description available";
+                        }
                         var pid = petfinder[i].id["$t"];
                         var email = petfinder[i].contact.email["$t"];
                         var breed = petfinder[i].breeds.breed["$t"];
                         var sex = petfinder[i].sex["$t"];
-                        if (description == null){
-                            description = "No description available"
+                        if (breed == null){
+                        	breed = "Breed Unavailable";
                         }
-                 
+                        var sex = petfinder[i].sex["$t"];
+
+						console.log(petfinder);
                         petInfo.push({description,photo,name,pid,email,sex,breed});
-                        console.log(petInfo)
+                        console.log(petInfo);
                     }; 
                     for (i=0;i<petfinder.length;i++){
                         $("#image-"+i).attr("src",petInfo[i].photo)
