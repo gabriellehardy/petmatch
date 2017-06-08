@@ -201,7 +201,8 @@ $(document).ready(function() {
                         $("#image-"+i).attr("class", "petImage")
                         $(".title-"+i).html(petInfo[i].name)
                         $(".subtitle-"+i).html(petInfo[i].breed + " | " + petInfo[i].sex)
-                        $(".description-"+i).html(petInfo[i].description.substring(0,500) + "&hellip;")
+                        $(".description-"+i).html(petInfo[i].description.substring(0,250) + "&hellip;")
+
 
 
                        
@@ -250,7 +251,14 @@ $(document).ready(function() {
             console.log("works")
             offset -= 9;
             ajax();
-        })        
+        })
+        /*$(".card").on("click", function(){
+        	if (state === "front"){
+	            $(this).children(".front").addClass("hidden")
+	            $(this).children(".back").removeClass("hidden")
+	            $(".modal").addClass("is-active");
+	            $(".modal-card-body").html(petInfo[i].description);
+        })*/     
         console.log(petInfo);
         
     });
