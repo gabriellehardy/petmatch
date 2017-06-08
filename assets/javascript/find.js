@@ -182,6 +182,10 @@ $(document).ready(function() {
                         var breed = petfinder[i].breeds.breed["$t"];
 
 
+
+
+                        var sex = petfinder[i].sex["$t"];
+
                         if (breed == null){
                         	breed = "Breed Unavailable";
                         }
