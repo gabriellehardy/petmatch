@@ -46,6 +46,11 @@ $(document).ready(function() {
         }
 
     })
+    $(".card-footer-item").on("click", function(){
+        var index = this.value;
+        favorites.push(petInfo[index]);
+        console.log(favorites)
+    });
     $("#dog").on("click", function() {
         console.log("dog selected")
         $(".editAnimal").removeClass("hidden")
@@ -175,6 +180,7 @@ $(document).ready(function() {
                         var pid = petfinder[i].id["$t"];
                         var email = petfinder[i].contact.email["$t"];
                         var breed = petfinder[i].breeds.breed["$t"];
+                        var sex = petfinder[i].sex["$t"];
                         if (breed == null){
                         	breed = "Breed Unavailable";
                         }
