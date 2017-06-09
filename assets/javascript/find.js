@@ -45,7 +45,7 @@ $(document).ready(function() {
             state = "front"
         }
 
-    })
+    });
     $(".card-footer-item").on("click", function(){
         var index = this.value;
         favorites.push(petInfo[index]);
@@ -180,17 +180,10 @@ $(document).ready(function() {
                         var pid = petfinder[i].id["$t"];
                         var email = petfinder[i].contact.email["$t"];
                         var breed = petfinder[i].breeds.breed["$t"];
-
-
-
-
-                        var sex = petfinder[i].sex["$t"];
-
                         if (breed == null){
                         	breed = "Breed Unavailable";
                         }
                         var sex = petfinder[i].sex["$t"];
-
 
                         petInfo.push({description,photo,name,pid,email,sex,breed});
 
@@ -200,6 +193,8 @@ $(document).ready(function() {
                         $("#image-"+i).attr("src",petInfo[i].photo)
                         $("#image-"+i).attr("class", "petImage")
                         $(".title-"+i).html(petInfo[i].name)
+                        $("#modal-title"+i).html(petInfo[i].name)
+                        $("#modal-body"+i).html("<img src=\"" + petInfo[i].photo + "\"/>" + "<br>" + petInfo[i].breed + " | " + petInfo[i].sex + "<br>" + petInfo[i].description)
                         $(".subtitle-"+i).html(petInfo[i].breed + " | " + petInfo[i].sex)
                         $(".description-"+i).html(petInfo[i].description.substring(0,250) + "&hellip;")
 
@@ -253,11 +248,9 @@ $(document).ready(function() {
             ajax();
         })
         /*$(".card").on("click", function(){
-        	if (state === "front"){
-	            $(this).children(".front").addClass("hidden")
-	            $(this).children(".back").removeClass("hidden")
-	            $(".modal").addClass("is-active");
-	            $(".modal-card-body").html(petInfo[i].description);
+	            $(".modal").addClass("is-active")
+	            $("#modal-title"+i).html(petInfo[i].name)
+                $("#modal-body"+i).html(petInfo[i].breed + " | " + petInfo[i].sex + "<br>" + petInfo[i].description)
         })*/     
         console.log(petInfo);
         
