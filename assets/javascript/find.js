@@ -196,7 +196,7 @@ $(document).ready(function() {
                         $("#modal-title"+i).html(petInfo[i].name)
                         $("#modal-body"+i).html("<img src=\"" + petInfo[i].photo + "\"/>" + "<br>" + petInfo[i].breed + " | " + petInfo[i].sex + "<br>" + petInfo[i].description)
                         $(".subtitle-"+i).html(petInfo[i].breed + " | " + petInfo[i].sex)
-                        $(".description-"+i).html(petInfo[i].description.substring(0,250) + "&hellip;")
+                        $(".description-"+i).html(petInfo[i].description.substring(0,590) + "&hellip;")
 
 
 
