@@ -13,7 +13,44 @@ $(document).ready(function() {
     var db = firebase.database();
     var auth = firebase.auth();
     //users logged in
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '228126044356258',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v2.9'
+    });
+    FB.AppEvents.logPageView();
+    //check log in status
+FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    console.log('Logged in.');
+    console.log(response)
+    
+    var provider = firebase.auth.FacebookAuthProvider();
+    provider.catch(e => console.log(e.message));
+  }
+  else if(response.status === "not_authorized"){
+    console.log("not logged in")
+    FB.login();
+  }
+});
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  $("#logout").on("click", function(){
+    FB.logout(function(response){
+        console.log("logged out")
+        document.location.reload();       
+    })
+  })
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.

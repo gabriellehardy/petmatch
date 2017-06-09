@@ -200,6 +200,9 @@ $(document).ready(function() {
                     var photo = petfinder[i].media.photos.photo[2]["$t"];
                     var name = petfinder[i].name["$t"];
                     var description = petfinder[i].description["$t"];
+                    if (photo = false){
+                        
+                    }
                     petInfo.push({description,photo,name});
                 }; 
                 //sets first animal info
