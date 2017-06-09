@@ -26,6 +26,7 @@ $(document).ready(function() {
  
  	});
 
+    var database = firebase.database();
 	var favorites = [];
     var petInfo = [];
     var zipcode = "";
@@ -34,6 +35,7 @@ $(document).ready(function() {
     var age = "";
     var offset = 0;
     var state = "front";
+
     $(".card").on("click", function(){
         if (state === "front"){
             $(this).children(".front").addClass("hidden")
@@ -49,7 +51,10 @@ $(document).ready(function() {
     $(".card-footer-item").on("click", function(){
         var index = this.value;
         favorites.push(petInfo[index]);
-        console.log(favorites)
+        database.ref().push({
+        	favorites: favorites
+        });
+        console.log(favorites);
     });
     $("#dog").on("click", function() {
         console.log("dog selected")
