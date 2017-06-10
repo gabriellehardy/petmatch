@@ -36,7 +36,6 @@ $(document).ready(function() {
     var size = "";
     var age = "";
     var offset = 0;
-    var state = "front";
 
     // $(".card").on("click", function(){
     //     if (state === "front"){
@@ -52,7 +51,7 @@ $(document).ready(function() {
     // });
 
     $(".favorite").on("click", function(){
-        var index = $(this).value;
+        var index = this.value;
         favorites.push(petInfo[index]);
         // database.ref().update({
         //     favorites: favorites
