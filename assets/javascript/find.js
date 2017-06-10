@@ -38,26 +38,45 @@ $(document).ready(function() {
     var offset = 0;
     var state = "front";
 
-    $(".card").on("click", function(){
-        if (state === "front"){
-            $(this).children(".front").addClass("hidden")
-            $(this).children(".back").removeClass("hidden")
-            state = "back"
-        } else if (state === "back"){
-            $(this).children(".front").removeClass("hidden")
-            $(this).children(".back").addClass("hidden")
-            state = "front"
-        }
+    // $(".card").on("click", function(){
+    //     if (state === "front"){
+    //         $(this).children(".front").addClass("hidden")
+    //         $(this).children(".back").removeClass("hidden")
+    //         state = "back"
+    //     } else if (state === "back"){
+    //         $(this).children(".front").removeClass("hidden")
+    //         $(this).children(".back").addClass("hidden")
+    //         state = "front"
+    //     }
 
-    });
-    $(".card-footer-item").on("click", function(){
+    // });
+
+    $(".favorite").on("click", function(){
         var index = this.value;
         favorites.push(petInfo[index]);
         database.ref().update({
-        	favorites: favorites
+            favorites: favorites
         });
         console.log(favorites);
     });
+
+    $(".details").on("click", function(){
+
+        var target = $(this).data("target"); 
+        console.log(target);
+
+        $(target).addClass("is-active");
+        // var index = this.value;
+        // favorites.push(petInfo[index]);
+        // database.ref().update({
+        //     favorites: favorites
+        // });
+        // console.log(favorites);
+    });
+
+
+
+
     $("#dog").on("click", function() {
         console.log("dog selected")
         $(".editAnimal").removeClass("hidden")
@@ -195,19 +214,18 @@ $(document).ready(function() {
                         petInfo.push({description,photo,name,pid,email,sex,breed});
 
                     }; 
-                        console.log(petInfo);                    
+
+
                     for (i=0;i<petfinder.length;i++){
                         $("#image-"+i).attr("src",petInfo[i].photo)
                         $("#image-"+i).attr("class", "petImage")
                         $(".title-"+i).html(petInfo[i].name)
                         $("#modal-title"+i).html(petInfo[i].name)
-                        $("#modal-body"+i).html("<img src=\"" + petInfo[i].photo + "\"/>" + "<br>" + petInfo[i].breed + " | " + petInfo[i].sex + "<br>" + petInfo[i].description)
+                        // $("#modal-body"+i).html("<img src=\"" + petInfo[i].photo + "\"/>" + "<br>" + petInfo[i].breed + " | " + petInfo[i].sex + "<br>" + petInfo[i].description)
+                        $("#modal-body"+i).html("<pre>"+petInfo[i].description+"</pre>")
                         $(".subtitle-"+i).html(petInfo[i].breed + " | " + petInfo[i].sex)
-                        $(".description-"+i).html(petInfo[i].description.substring(0,590) + "&hellip;")
+                        // $(".description-"+i).html(petInfo[i].description.substring(0,590) + "&hellip;")
 
-
-
-                       
 
                     }
                     $(".petContainer").removeClass("hidden");

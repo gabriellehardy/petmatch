@@ -15,3 +15,20 @@
 .card{
 	margin-bottom: 20px;
 }
+
+.petImage {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+}
+
+.petImage:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+.modal pre {
+	white-space: pre-line;
+	background-color: white;
+}
