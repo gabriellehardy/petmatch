@@ -11,7 +11,9 @@ $(document).ready(function() {
         console.log('no user');
         // No user is signed in.
       }
+
     });
+
     
     $("#dog").click(function(){
             $('.toHide').hide();
@@ -51,7 +53,7 @@ $(document).ready(function() {
     $(".card-footer-item").on("click", function(){
         var index = this.value;
         favorites.push(petInfo[index]);
-        database.ref().push({
+        database.ref().update({
         	favorites: favorites
         });
         console.log(favorites);
