@@ -52,7 +52,7 @@ $(document).ready(function() {
     // });
 
     $(".favorite").on("click", function(){
-        var index = $(this).data("value");
+        var index = $(this).value;
         favorites.push(petInfo[index]);
         // database.ref().update({
         //     favorites: favorites
