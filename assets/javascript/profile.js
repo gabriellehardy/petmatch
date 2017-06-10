@@ -9,6 +9,7 @@ $(document).ready(function() {
         $("#user-email").html(user.email);
         $("#avatar-img").attr('src', 'https://api.adorable.io/avatars/285/'+user.email);
 
+        // console.log(usersRef);
         // User is signed in.
       } else {
         window.location.href = 'index.html';

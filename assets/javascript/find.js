@@ -1,9 +1,11 @@
 $(document).ready(function() {
+    var uid;
+
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         console.log('hey i remember you');
 
-        // window.location.href = 'profile.html';
+        uid = user.uid;
 
         // User is signed in.
       } else {
@@ -16,20 +18,21 @@ $(document).ready(function() {
 
     
     $("#dog").click(function(){
-            $('.toHide').hide();
-            $("#sizeSelector").show('slow');
- 
+        $('.toHide').hide();
+        $("#sizeSelector").show('slow'); 
  	}); 
 
 
     $("#cat").click(function(){
-            $('.toHide').hide();
-            $("#sizeSelector").hide('slow');
- 
+        $('.toHide').hide();
+        $("#sizeSelector").hide('slow');
  	});
 
     var database = firebase.database();
-	var favorites = [];
+
+    console.log(favorites);
+
+
     var petInfo = [];
     var zipcode = "";
     var animal = "";
@@ -50,14 +53,10 @@ $(document).ready(function() {
 
     // });
 
-    $(".favorite").on("click", function(){
-        // var index = this.value;
+    $(".favorite").on("click", function() {
         var index = $(this).data("value");
-        favorites.push(petInfo[index]);
-        // database.ref().update({
-        //     favorites: favorites
-        // });
-        console.log(favorites);
+
+        firebase.database().ref('users/' + uid + "/favorites").push(petInfo[index]);
     });
 
     $(".details").on("click", function(){
