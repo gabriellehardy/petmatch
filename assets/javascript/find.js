@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     var database = firebase.database();
 
-    console.log(favorites);
+    // console.log(favorites);
 
 
     var petInfo = [];
