@@ -51,7 +51,8 @@ $(document).ready(function() {
     // });
 
     $(".favorite").on("click", function(){
-        var index = this.value;
+        // var index = this.value;
+        var index = $(this).data("value");
         favorites.push(petInfo[index]);
         // database.ref().update({
         //     favorites: favorites
