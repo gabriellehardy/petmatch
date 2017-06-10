@@ -54,9 +54,9 @@ $(document).ready(function() {
     $(".favorite").on("click", function(){
         var index = $(this).data("value");
         favorites.push(petInfo[index]);
-        database.ref().update({
-            favorites: favorites
-        });
+        // database.ref().update({
+        //     favorites: favorites
+        // });
         console.log(favorites);
     });
 
