@@ -4,6 +4,15 @@ $(document).ready(function() {
       if (user) {
         console.log('redirect user here');
 
+        var user = firebase.auth().currentUser;
+
+        $("#user-email").html(user.email);
+        $("#avatar-img").attr('src', 'https://api.adorable.io/avatars/285/'+user.email);
+
+        if (!('favorites' in user)) {
+
+        }
+
         // window.location.href = 'profile.html';
 
         // User is signed in.

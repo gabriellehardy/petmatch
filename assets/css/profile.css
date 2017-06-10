@@ -3,7 +3,7 @@
   padding-bottom: 30px;
 }
 .profile-heading .name {
-  border-right: 1px solid #f1f1f1;
+  /*border-left: 1px solid #f1f1f1;*/
   margin:-30px 0;
   padding: 40px 30px 0 30px;
 }
