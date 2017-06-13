@@ -17,7 +17,7 @@ $(document).ready(function() {
       firebase.database().ref('/users/' + uid + "/favorites").once('value').then(function(snapshot) {
         snapshot.forEach(function(childSnapshot, index) {
 
-            $("#favorites").append('<div class="column is-one-quarter-desktop is-half-tablet"><div class="card"><div class="card-image"><figure class="image is-4by3"><img src="'
+            $("#favorites").append('<div class="column is-one-quarter-desktop is-half-tablet"><div class="card animated slideInUp"><div class="card-image"><figure class="image is-4by3"><img src="'
               +childSnapshot.val().photo+
               '"></figure></div><div class="card-content"><div class="content has-text-centered"><h1 class="title is-5">' + 
               childSnapshot.val().name + '</h1><h2 class="subtitle is-6">' + 
